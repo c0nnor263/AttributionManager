@@ -17,9 +17,6 @@ plugins {
     id("org.jetbrains.kotlin.android") version "1.8.0" apply false
 }
 
-group = Extras.Manager.PUBLISH_GROUP_ID
-version = Extras.Manager.PUBLISH_VERSION
-
 
 var keyId = ""
 var password = ""
@@ -28,7 +25,7 @@ var ossrhUsername = ""
 var ossrhPassword = ""
 var sonatypeStagingProfileId = ""
 
-val secretPropsFile: File = project.rootProject.file("local.properties")
+val secretPropsFile: File = project.rootProject.file("gradle.properties")
 
 if (secretPropsFile.exists()) {
     val keystoreProperties = java.util.Properties()

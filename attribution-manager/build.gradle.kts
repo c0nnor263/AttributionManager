@@ -3,8 +3,7 @@ plugins {
     kotlin("android")
 
 }
-apply(from = "publish-module.gradle.kts")
-
+apply(from = "${rootDir}/scripts/attribution-manager-publish-module.gradle.kts")
 
 android {
 

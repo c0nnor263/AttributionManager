@@ -1,19 +1,19 @@
 apply(plugin = "maven-publish")
 apply(plugin = "signing")
 
-
+group = Extras.PUBLISH_GROUP_ID
+version = Extras.PUBLISH_VERSION
+afterEvaluate {
 configure<PublishingExtension> {
 
-    publications.create<MavenPublication>("release") {
-        groupId = Extras.KtorEngine.PUBLISH_GROUP_ID
+    publications.create<MavenPublication>("attribution-engine-ktor-release") {
+        groupId = Extras.PUBLISH_GROUP_ID
         artifactId = Extras.KtorEngine.PUBLISH_ARTIFACT_ID
-        version = Extras.KtorEngine.PUBLISH_VERSION
+        version = Extras.PUBLISH_VERSION
 
         afterEvaluate {
             from(components.getByName("release"))
         }
-        //artifact("androidSourcesJar")
-
         pom {
             name.set(Extras.KtorEngine.PUBLISH_ARTIFACT_ID)
             description.set(Extras.KtorEngine.PUBLISH_DESCRIPTION)
@@ -42,7 +42,9 @@ configure<PublishingExtension> {
         mavenLocal()
         mavenCentral()
     }
+
     configure<SigningExtension> {
-        sign(publications)
+        sign(publications["attribution-engine-ktor-release"])
     }
+}
 }

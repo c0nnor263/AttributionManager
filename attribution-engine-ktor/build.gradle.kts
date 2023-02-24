@@ -2,7 +2,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
-apply(from = "publish-module.gradle.kts")
+apply(from ="${rootDir}/scripts/engine-ktor-publish-module.gradle.kts")
 
 android {
     namespace = Extras.KtorEngine.NAMESPACE
