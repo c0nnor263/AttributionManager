@@ -15,3 +15,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AttributionManager"
 include ':attribution-manager'
+include ':testapplication'
+include ':attribution-engine-ktor'
