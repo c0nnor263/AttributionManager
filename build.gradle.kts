@@ -13,10 +13,12 @@ buildscript {
 
 plugins {
     id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
+    id("com.android.library") version "7.4.1" apply false
+    id("org.jetbrains.kotlin.android") version "1.8.0" apply false
 }
 
-group = Extras.PUBLISH_GROUP_ID
-version = Extras.PUBLISH_VERSION
+group = Extras.Manager.PUBLISH_GROUP_ID
+version = Extras.Manager.PUBLISH_VERSION
 
 
 val secretPropsFile: File = project.rootProject.file("local.properties")
